@@ -17,7 +17,7 @@ import fnmatch
 from fundfilter import *
 from threadpool import *
 
-pyfund_version = '1.0'
+pyfund_version = 'v1.0'
 
 list_url = 'http://fund.eastmoney.com/js/fundcode_search.js'
 headers = {
@@ -258,7 +258,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    print(pyfund_version)
+    print('pyfund version:', pyfund_version)
 
     if args.seek:
         do_seek_funds()

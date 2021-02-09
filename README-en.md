@@ -18,13 +18,13 @@ st->op0->op1->op2->e
 ```
 
 ### **Legal statement**
-* This script was wrote by my own interest, it is not completely perfect. The filter method was very simple and crude, the funds would be selected in condition of that it rose in a cycle like 90 days and tanked for 60% in recent 10 days, which has not been not mathematically proven yet. There is no guarantee that the selected funds would rise, since the stock holding ratio and policy is excluded from this script.
+* This script was wrote by my own interest, which is not completely perfect. The filter method was very simple and crude. The funds would be selected in condition of that it rose in a cycle like 90 days and tanked for 60% in recent 10 days, which has not been not mathematically proven yet. There is no guarantee that the selected funds would rise, since the stock holding ratio and policy is excluded from this script.
 * This script can only be used for communication and learning purposes, not for commercial purposes。
-* Anyone who uses this script to purchase a fund, whether making money or losing money, has nothing to do with me.
+* Anyone who uses this script to invest a fund, whether it's price rises or tanks, has nothing to do with me.
 
 
 ### **Why do I wrote this script？**
-In order to earn some spare money after work, because your boss might not pay the enough salary for you. Anyway, I can play python by the way.
+Your boss might not pay the enough salary for you, so we have to earn some spare money after work. Anyway, I can also play python by the way.
 
 ### **OS Platform**
 Windows/Linux/macOS are supported

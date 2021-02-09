@@ -22,9 +22,19 @@ def is_my_favorite(fund):
     if total_increment < 0:
         return False
 
+    increment_array = []
+    for index, value in enumerate(worthset[-10:]):
+        if index != 0:
+            increment_array.append(value - worthset[index - 1])
+
+    if len(list(filter(lambda x: x < 0, increment_array[-6:]))) < 3:
+        return False
+
     dec_days = 0
+    worthset = worthset[-10:]
     worthset.reverse()
-    reversed_worthset = worthset[:6]
+    reversed_worthset = worthset
+    
     for index, value in enumerate(reversed_worthset):
         if index == len(reversed_worthset) - 1:
             break
