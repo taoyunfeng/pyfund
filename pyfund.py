@@ -17,7 +17,7 @@ import fnmatch
 from fundfilter import *
 from threadpool import *
 
-pyfund_version = 'v1.0'
+pyfund_version = '1.0'
 
 list_url = 'http://fund.eastmoney.com/js/fundcode_search.js'
 headers = {
@@ -86,27 +86,27 @@ def get_fund_info(code, fund, count=None):
 
     try:
         jsctx = execjs.compile(fund)
-        networth = jsctx.eval('Data_netWorthTrend')
+        worth_trend = jsctx.eval('Data_ACWorthTrend')
         fundname = jsctx.eval('fS_name')
         fundcode = code
 
-        if type(count) is int and len(networth) > count:
-            networth = networth[-count:]
+        if type(count) is int and len(worth_trend) > count:
+            worth_trend = worth_trend[-count:]
 
-        return (fundname, fundcode, networth)
+        return (fundname, fundcode, worth_trend)
     except:
         return None
 
 
 def show_fund_info(fund):
 
-    fundname, fundcode, networth = fund
+    fundname, fundcode, worth_trend = fund
 
     x = []
     y = []
-    for item in networth:
-        x.append(item['x']//1000)
-        y.append(item['y'])
+    for item in worth_trend:
+        x.append(item[0]//1000)
+        y.append(item[1])
 
     fig, ax = plt.subplots()
     xtick = [i for i in range(0, len(x), len(x) // 10)]
@@ -258,7 +258,7 @@ if __name__ == '__main__':
 
     args = parser.parse_args()
 
-    print('pyfund version:', pyfund_version)
+    print(pyfund_version)
 
     if args.seek:
         do_seek_funds()
